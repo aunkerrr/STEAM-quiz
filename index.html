@@ -34,6 +34,7 @@
                 <div id="question-area">
                     <p id="question">Think of a STEAM personality, and I'll try to guess it!</p>
                     <p id="steps">Steps: 0</p>
+                    <img id="result-image" class="character-img-large" style="display: none;">
                 </div>
                 <div id="buttons">
                     <button id="yes-btn" class="btn btn-success">Yes</button>
@@ -91,38 +92,197 @@
                     <div class="characters-list">
                         <h6>Scientists:</h6>
                         <ul>
-                            <li><strong>Albert Einstein</strong> - Revolutionary physicist known for the theory of relativity</li>
-                            <li><strong>Niels Bohr</strong> - Pioneer in quantum mechanics and atomic structure</li>
-                            <li><strong>Richard Feynman</strong> - Quantum physics pioneer and inspiring educator</li>
-                            <li><strong>Isaac Newton</strong> - Discovered gravity and laws of motion</li>
-                            <li><strong>Charles Darwin</strong> - Developed the theory of evolution</li>
-                            <li><strong>Marie Curie</strong> - Discovered radioactivity, first woman to win Nobel Prize</li>
-                            <li><strong>Louis Pasteur</strong> - Father of microbiology, developed pasteurization</li>
-                            <li><strong>Alan Turing</strong> - Father of computer science and artificial intelligence</li>
-                            <li><strong>John von Neumann</strong> - Computer architecture pioneer and mathematical genius</li>
+                            <li>
+                                <img src="images/scientists/albert-einstein.webp" alt="Albert Einstein" class="character-img">
+                                <div class="character-info">
+                                    <strong>Albert Einstein</strong> (1879-1955)
+                                    <p>Revolutionary physicist known for the theory of relativity. Nobel Prize winner in Physics (1921). Changed our understanding of space, time, and gravity.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/scientists/niels-bohr.webp" alt="Niels Bohr" class="character-img">
+                                <div class="character-info">
+                                    <strong>Niels Bohr</strong> (1885-1962)
+                                    <p>Pioneer in quantum mechanics and atomic structure. Nobel Prize in Physics (1922). Developed the model of the atom with electron orbits.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/scientists/richard-feynman.webp" alt="Richard Feynman" class="character-img">
+                                <div class="character-info">
+                                    <strong>Richard Feynman</strong> (1918-1988)
+                                    <p>Quantum physics pioneer and inspiring educator. Nobel Prize in Physics (1965). Known for his work on quantum electrodynamics.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/scientists/isaac-newton.webp" alt="Isaac Newton" class="character-img">
+                                <div class="character-info">
+                                    <strong>Isaac Newton</strong> (1643-1727)
+                                    <p>Discovered gravity and laws of motion. Key figure in the scientific revolution. His work laid the foundation for classical mechanics.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/scientists/charles-darwin.webp" alt="Charles Darwin" class="character-img">
+                                <div class="character-info">
+                                    <strong>Charles Darwin</strong> (1809-1882)
+                                    <p>Developed the theory of evolution by natural selection. His book "On the Origin of Species" is a cornerstone of modern biology.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/scientists/marie-curie.webp" alt="Marie Curie" class="character-img">
+                                <div class="character-info">
+                                    <strong>Marie Curie</strong> (1867-1934)
+                                    <p>Discovered radioactivity, first woman to win Nobel Prize. Her research was crucial to the development of X-rays in surgery.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/scientists/louis-pasteur.webp" alt="Louis Pasteur" class="character-img">
+                                <div class="character-info">
+                                    <strong>Louis Pasteur</strong> (1822-1895)
+                                    <p>Father of microbiology, developed pasteurization. His work on vaccines, including rabies, saved countless lives.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/scientists/alan-turing.webp" alt="Alan Turing" class="character-img">
+                                <div class="character-info">
+                                    <strong>Alan Turing</strong> (1912-1954)
+                                    <p>Father of computer science and artificial intelligence. Key figure in breaking the Enigma code during WWII.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/scientists/john-von-neumann.webp" alt="John von Neumann" class="character-img">
+                                <div class="character-info">
+                                    <strong>John von Neumann</strong> (1903-1957)
+                                    <p>Computer architecture pioneer and mathematical genius. Made significant contributions to game theory and quantum mechanics.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/scientists/rachel-carson.webp" alt="Rachel Carson" class="character-img">
+                                <div class="character-info">
+                                    <strong>Rachel Carson</strong> (1907-1964)
+                                    <p>Pioneer of environmental science and conservation. Her book "Silent Spring" challenged pesticide use and inspired environmental movements.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/scientists/george-washington-carver.webp" alt="George Washington Carver" class="character-img">
+                                <div class="character-info">
+                                    <strong>George Washington Carver</strong> (1864-1943)
+                                    <p>Revolutionary agricultural scientist and inventor. Developed crop rotation and alternative crops to cotton, improving soil depleted by cotton monoculture.</p>
+                                </div>
+                            </li>
                         </ul>
                         <h6>Artists:</h6>
                         <ul>
-                            <li><strong>Leonardo da Vinci</strong> - Renaissance polymath, painter of Mona Lisa</li>
-                            <li><strong>Michelangelo</strong> - Sculptor and painter of the Sistine Chapel</li>
-                            <li><strong>Vincent van Gogh</strong> - Post-impressionist painter of Starry Night</li>
-                            <li><strong>Pablo Picasso</strong> - Pioneer of Cubism and modern art</li>
+                            <li>
+                                <img src="images/artists/leonardo-da-vinci.webp" alt="Leonardo da Vinci" class="character-img">
+                                <div class="character-info">
+                                    <strong>Leonardo da Vinci</strong> (1452-1519)
+                                    <p>Renaissance polymath, painter of Mona Lisa. His works encompass painting, sculpture, architecture, and science.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/artists/michelangelo.webp" alt="Michelangelo" class="character-img">
+                                <div class="character-info">
+                                    <strong>Michelangelo</strong> (1475-1564)
+                                    <p>Sculptor and painter of the Sistine Chapel. His sculptures, like David, are masterpieces of Renaissance art.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/artists/vincent-van-gogh.webp" alt="Vincent van Gogh" class="character-img">
+                                <div class="character-info">
+                                    <strong>Vincent van Gogh</strong> (1853-1890)
+                                    <p>Post-impressionist painter of Starry Night. His expressive use of color and brushwork had a profound influence on 20th-century art.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/artists/pablo-picasso.webp" alt="Pablo Picasso" class="character-img">
+                                <div class="character-info">
+                                    <strong>Pablo Picasso</strong> (1881-1973)
+                                    <p>Pioneer of Cubism and modern art. His diverse body of work includes painting, sculpture, and ceramics.</p>
+                                </div>
+                            </li>
                         </ul>
                         <h6>Mathematicians & Computer Scientists:</h6>
                         <ul>
-                            <li><strong>Ada Lovelace</strong> - First computer programmer in history</li>
-                            <li><strong>Grace Hopper</strong> - Invented first compiler and programming pioneer</li>
-                            <li><strong>Pythagoras</strong> - Ancient Greek mathematician, discovered pythagorean theorem</li>
-                            <li><strong>Katherine Johnson</strong> - NASA mathematician who calculated space flight trajectories</li>
+                            <li>
+                                <img src="images/mathematicians/ada-lovelace.webp" alt="Ada Lovelace" class="character-img">
+                                <div class="character-info">
+                                    <strong>Ada Lovelace</strong> (1815-1852)
+                                    <p>First computer programmer in history. Her notes on the Analytical Engine include what is considered the first algorithm.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/mathematicians/grace-hopper.webp" alt="Grace Hopper" class="character-img">
+                                <div class="character-info">
+                                    <strong>Grace Hopper</strong> (1906-1992)
+                                    <p>Invented first compiler and programming pioneer. Her work led to the development of COBOL, one of the first high-level programming languages.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/mathematicians/pythagoras.webp" alt="Pythagoras" class="character-img">
+                                <div class="character-info">
+                                    <strong>Pythagoras</strong> (c. 570-495 BC)
+                                    <p>Ancient Greek mathematician, discovered Pythagorean theorem. His work in mathematics and philosophy laid the groundwork for future scholars.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/mathematicians/katherine-johnson.webp" alt="Katherine Johnson" class="character-img">
+                                <div class="character-info">
+                                    <strong>Katherine Johnson</strong> (1918-2020)
+                                    <p>NASA mathematician who calculated space flight trajectories. Her calculations were critical to the success of the early space missions.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/mathematicians/david-hilbert.webp" alt="David Hilbert" class="character-img">
+                                <div class="character-info">
+                                    <strong>David Hilbert</strong> (1862-1943)
+                                    <p>Influential mathematician who formalized mathematical logic. His work laid the foundation for much of modern mathematics.</p>
+                                </div>
+                            </li>
                         </ul>
                         <h6>Inventors & Architects:</h6>
                         <ul>
-                            <li><strong>Thomas Edison</strong> - Inventor of the light bulb and phonograph</li>
-                            <li><strong>Nikola Tesla</strong> - Pioneer of AC electricity and wireless transmission</li>
-                            <li><strong>Alexander Graham Bell</strong> - Inventor of the telephone</li>
-                            <li><strong>Steve Jobs</strong> - Co-founder of Apple, revolutionized personal computing</li>
-                            <li><strong>Frank Lloyd Wright</strong> - Revolutionary American architect and designer</li>
-                            <li><strong>Imhotep</strong> - Ancient Egyptian architect, designed first pyramid</li>
+                            <li>
+                                <img src="images/inventors/thomas-edison.webp" alt="Thomas Edison" class="character-img">
+                                <div class="character-info">
+                                    <strong>Thomas Edison</strong> (1847-1931)
+                                    <p>Inventor of the light bulb and phonograph. Held over 1,000 patents, his inventions greatly impacted modern electricity and sound recording.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/inventors/nikola-tesla.webp" alt="Nikola Tesla" class="character-img">
+                                <div class="character-info">
+                                    <strong>Nikola Tesla</strong> (1856-1943)
+                                    <p>Pioneer of AC electricity and wireless transmission. His inventions and theoretical work laid the foundation for modern electrical engineering.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/inventors/alexander-graham-bell.webp" alt="Alexander Graham Bell" class="character-img">
+                                <div class="character-info">
+                                    <strong>Alexander Graham Bell</strong> (1847-1922)
+                                    <p>Inventor of the telephone. His work focused on sound and speech, leading to significant advancements in communication technology.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/inventors/steve-jobs.webp" alt="Steve Jobs" class="character-img">
+                                <div class="character-info">
+                                    <strong>Steve Jobs</strong> (1955-2011)
+                                    <p>Co-founder of Apple, revolutionized personal computing. His vision for user-friendly technology transformed multiple industries.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/inventors/frank-lloyd-wright.webp" alt="Frank Lloyd Wright" class="character-img">
+                                <div class="character-info">
+                                    <strong>Frank Lloyd Wright</strong> (1867-1959)
+                                    <p>Revolutionary American architect and designer. Developed the Prairie School movement of architecture, influencing modern architectural design.</p>
+                                </div>
+                            </li>
+                            <li>
+                                <img src="images/inventors/imhotep.webp" alt="Imhotep" class="character-img">
+                                <div class="character-info">
+                                    <strong>Imhotep</strong> (c. 2650-2600 BC)
+                                    <p>Ancient Egyptian architect, designed first pyramid. Considered the first architect in history, his innovations set standards for future architecture.</p>
+                                </div>
+                            </li>
                         </ul>
                     </div>
                 </div>

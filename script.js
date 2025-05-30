@@ -16,14 +16,22 @@ const decisionTree = {
             no: "Isaac Newton"
         },
         no: {
-            question: "Did they work in biology?",
+            question: "Did they work in biology or environmental science?",
             yes: {
                 question: "Are they known for evolution theory?",
                 yes: "Charles Darwin",
                 no: {
                     question: "Did they work with radiation?",
                     yes: "Marie Curie",
-                    no: "Louis Pasteur"
+                    no: {
+                        question: "Did they work on environmental conservation?",
+                        yes: "Rachel Carson",
+                        no: {
+                            question: "Did they work with agricultural science?",
+                            yes: "George Washington Carver",
+                            no: "Louis Pasteur"
+                        }
+                    }
                 }
             },
             no: {
@@ -33,7 +41,11 @@ const decisionTree = {
                     yes: "Alan Turing",
                     no: "John von Neumann"
                 },
-                no: "Thomas Edison"
+                no: {
+                    question: "Did they work in pure mathematics?",
+                    yes: "David Hilbert",
+                    no: "Thomas Edison"
+                }
             }
         }
     },
@@ -107,6 +119,30 @@ function showResult(character) {
     yesButton.style.display = 'none';
     noButton.style.display = 'none';
     restartButton.style.display = 'block';
+    
+    // Show character image
+    const resultImage = document.getElementById('result-image');
+    const characterSlug = character.toLowerCase().replace(/\s+/g, '-');
+    const imagePath = `images/${getCharacterCategory(character)}/${characterSlug}.webp`;
+    resultImage.src = imagePath;
+    resultImage.alt = character;
+    resultImage.style.display = 'block';
+}
+
+function getCharacterCategory(character) {
+    const scientists = ['Albert Einstein', 'Niels Bohr', 'Richard Feynman', 'Isaac Newton', 
+                       'Charles Darwin', 'Marie Curie', 'Louis Pasteur', 'Alan Turing', 
+                       'John von Neumann', 'Rachel Carson', 'George Washington Carver'];
+    const artists = ['Leonardo da Vinci', 'Michelangelo', 'Vincent van Gogh', 'Pablo Picasso'];
+    const mathematicians = ['Ada Lovelace', 'Grace Hopper', 'Pythagoras', 'Katherine Johnson', 'David Hilbert'];
+    const inventors = ['Thomas Edison', 'Nikola Tesla', 'Alexander Graham Bell', 'Steve Jobs', 
+                      'Frank Lloyd Wright', 'Imhotep'];
+
+    if (scientists.includes(character)) return 'scientists';
+    if (artists.includes(character)) return 'artists';
+    if (mathematicians.includes(character)) return 'mathematicians';
+    if (inventors.includes(character)) return 'inventors';
+    return '';
 }
 
 function restartGame() {
@@ -117,6 +153,7 @@ function restartGame() {
     yesButton.style.display = 'inline-block';
     noButton.style.display = 'inline-block';
     restartButton.style.display = 'none';
+    document.getElementById('result-image').style.display = 'none';
 }
 
 function reloadGame() {
@@ -160,6 +197,11 @@ function getAllCharacters(tree) {
 function initializeModals() {
     const howToPlayModal = new bootstrap.Modal(document.getElementById('howToPlayModal'));
     const charactersModal = new bootstrap.Modal(document.getElementById('charactersModal'));
+    
+    // Keep button simple without counts
+    const charBtn = document.getElementById('character-info-btn');
+    charBtn.innerHTML = '<i class="bi bi-people"></i> Characters';
+    
     document.getElementById('how-to-play-btn').addEventListener('click', () => howToPlayModal.show());
     document.getElementById('character-info-btn').addEventListener('click', () => charactersModal.show());
 }
