@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>STEAM Character Quiz</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-dark text-light">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark border-bottom">
+        <div class="container">
+            <a class="navbar-brand" href="#">STEAM Quiz</a>
+            <div class="navbar-nav ms-auto">
+                <button class="btn btn-outline-warning mx-2" id="how-to-play-btn">
+                    <i class="bi bi-controller"></i> How to Play
+                </button>
+                <button class="btn btn-outline-success mx-2" id="character-info-btn">
+                    <i class="bi bi-people"></i> Characters
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="quiz-container">
+            <div class="d-flex justify-content-end mb-3">
+                <button id="reload-btn" class="btn btn-outline-light">
+                    <i class="bi bi-arrow-clockwise"></i> New Game
+                </button>
+            </div>
+            <h1>STEAM Character Quiz</h1>
+            <div id="game-area">
+                <div id="question-area">
+                    <p id="question">Think of a STEAM personality, and I'll try to guess it!</p>
+                    <p id="steps">Steps: 0</p>
+                </div>
+                <div id="buttons">
+                    <button id="yes-btn" class="btn btn-success">Yes</button>
+                    <button id="no-btn" class="btn btn-danger">No</button>
+                    <button id="restart-btn" class="btn btn-primary">Start Over</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer mt-auto py-3 bg-dark border-top">
+        <div class="container text-center">
+            <p class="mb-1">Created by <span class="text-info">Nikita Myroniuk</span></p>
+            <p class="text-muted mb-0">STEAM Character Quiz - Educational Project</p>
+        </div>
+    </footer>
+
+    <!-- How to Play Modal -->
+    <div class="modal fade" id="howToPlayModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">How to Play STEAM Quiz</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="how-to-play">
+                        <h6>Game Rules:</h6>
+                        <ol>
+                            <li>Think of any STEAM personality from the available characters list</li>
+                            <li>Answer the questions with Yes or No</li>
+                            <li>The game will try to guess your character in the fewest steps possible</li>
+                            <li>You can see your progress in the Steps counter</li>
+                            <li>Use the Characters button to see all available personalities</li>
+                        </ol>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Characters Modal -->
+    <div class="modal fade" id="charactersModal" tabindex="-1" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Available Characters</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="characters-list">
+                        <h6>Scientists:</h6>
+                        <ul>
+                            <li><strong>Albert Einstein</strong> - Revolutionary physicist known for the theory of relativity</li>
+                            <li><strong>Niels Bohr</strong> - Pioneer in quantum mechanics and atomic structure</li>
+                            <li><strong>Richard Feynman</strong> - Quantum physics pioneer and inspiring educator</li>
+                            <li><strong>Isaac Newton</strong> - Discovered gravity and laws of motion</li>
+                            <li><strong>Charles Darwin</strong> - Developed the theory of evolution</li>
+                            <li><strong>Marie Curie</strong> - Discovered radioactivity, first woman to win Nobel Prize</li>
+                            <li><strong>Louis Pasteur</strong> - Father of microbiology, developed pasteurization</li>
+                            <li><strong>Alan Turing</strong> - Father of computer science and artificial intelligence</li>
+                            <li><strong>John von Neumann</strong> - Computer architecture pioneer and mathematical genius</li>
+                        </ul>
+                        <h6>Artists:</h6>
+                        <ul>
+                            <li><strong>Leonardo da Vinci</strong> - Renaissance polymath, painter of Mona Lisa</li>
+                            <li><strong>Michelangelo</strong> - Sculptor and painter of the Sistine Chapel</li>
+                            <li><strong>Vincent van Gogh</strong> - Post-impressionist painter of Starry Night</li>
+                            <li><strong>Pablo Picasso</strong> - Pioneer of Cubism and modern art</li>
+                        </ul>
+                        <h6>Mathematicians & Computer Scientists:</h6>
+                        <ul>
+                            <li><strong>Ada Lovelace</strong> - First computer programmer in history</li>
+                            <li><strong>Grace Hopper</strong> - Invented first compiler and programming pioneer</li>
+                            <li><strong>Pythagoras</strong> - Ancient Greek mathematician, discovered pythagorean theorem</li>
+                            <li><strong>Katherine Johnson</strong> - NASA mathematician who calculated space flight trajectories</li>
+                        </ul>
+                        <h6>Inventors & Architects:</h6>
+                        <ul>
+                            <li><strong>Thomas Edison</strong> - Inventor of the light bulb and phonograph</li>
+                            <li><strong>Nikola Tesla</strong> - Pioneer of AC electricity and wireless transmission</li>
+                            <li><strong>Alexander Graham Bell</strong> - Inventor of the telephone</li>
+                            <li><strong>Steve Jobs</strong> - Co-founder of Apple, revolutionized personal computing</li>
+                            <li><strong>Frank Lloyd Wright</strong> - Revolutionary American architect and designer</li>
+                            <li><strong>Imhotep</strong> - Ancient Egyptian architect, designed first pyramid</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.7.2/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
