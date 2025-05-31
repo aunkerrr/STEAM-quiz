@@ -1,0 +1,219 @@
+STEAM WHO? - User Manual
+======================
+
+Table of Contents
+----------------
+1. Introduction
+2. Project Overview
+3. Game Rules
+4. Project Structure
+5. Technical Requirements
+6. How to Play
+7. Development Guidelines
+8. Character Database Requirements
+9. Algorithm Pseudocode
+10. Flowchart
+11. Project Delivery Requirements
+
+1. Introduction
+--------------
+STEAM Who? is an interactive web-based game that challenges players to think about famous personalities in the STEAM (Science, Technology, Engineering, Arts, and Mathematics) fields. This project was developed as part of a JavaScript programming course.
+
+2. Project Overview
+------------------
+The game implements a question-and-answer system where the computer attempts to guess a STEAM personality that the player has chosen from a predefined list. Through a series of yes/no questions, the system narrows down the possibilities until it can identify the chosen character.
+
+3. Game Rules
+------------
+- Select a character from the provided list of STEAM personalities
+- Answer only with "YES" or "NO" to the computer's questions
+- Be honest with your answers to allow the system to correctly guess your character
+- Continue answering questions until the system makes its final guess
+
+4. Project Structure
+-------------------
+The project follows a specific directory structure:
+/
+├── index.html          # Main entry point
+├── manuale_utente.pdf  # This user manual in PDF format
+├── css/               # Style sheets directory
+├── img/               # Images directory
+└── [other folders]    # Additional resource directories
+
+5. Technical Requirements
+------------------------
+- A modern web browser (Chrome, Firefox, Safari, or Edge)
+- JavaScript enabled
+- Internet connection (if using external resources)
+
+6. How to Play
+-------------
+1. Open index.html in your web browser
+2. Read the initial instructions
+3. Choose a STEAM personality from the provided list (keep it in mind)
+4. Click "Start Game" or equivalent button
+5. Answer the system's questions truthfully with YES or NO
+6. Continue until the system makes its guess
+
+7. Development Guidelines
+------------------------
+The project was developed following these steps:
+
+Analysis Phase:
+- Problem understanding
+- Algorithm development using flowcharts/pseudocode
+- Character database creation (minimum 20 STEAM personalities)
+- Information gathering for each character
+
+Coding Phase:
+- HTML structure implementation
+- JavaScript logic development
+- CSS styling
+- Integration of all components
+
+Testing Phase:
+- Functionality testing
+- Edge case testing
+- User experience validation
+- Bug fixing
+
+Project Organization:
+- Clear folder structure
+- Proper file naming
+- Documentation
+- Code commenting
+
+Notes for Users:
+- The game uses binary (yes/no) questions to narrow down possibilities
+- Answer consistency is crucial for accurate results
+- The system learns from each game session
+- Multiple play-throughs are encouraged to see different question patterns
+
+8. Character Database Requirements
+--------------------------------
+For this project, we need:
+- Minimum of 20 STEAM personalities
+- Each character must have the following information:
+  * Name
+  * Field (Science/Technology/Engineering/Arts/Mathematics)
+  * Birth year
+  * Notable achievements/awards
+  * Area of expertise
+  * Major contributions
+  * Nationality
+  * Gender
+  * Living/Deceased status
+  * Nobel prizes (if any)
+
+Example Character Format:
+1. Albert Einstein
+   - Field: Science (Physics)
+   - Birth: 1879
+   - Awards: Nobel Prize in Physics
+   - Expertise: Theoretical Physics
+   - Major Contribution: Theory of Relativity
+   - Nationality: German
+   - Gender: Male
+   - Status: Deceased
+
+9. Algorithm Pseudocode
+----------------------
+PROGRAM STEAMWho
+
+// Initialize data structures
+characters = LOAD_CHARACTER_DATABASE()
+questions = LOAD_QUESTIONS()
+possibleCharacters = characters.copy()
+
+// Main game loop
+PROCEDURE startGame()
+    WHILE possibleCharacters.length > 1
+        bestQuestion = findBestQuestion(possibleCharacters, questions)
+        answer = askQuestion(bestQuestion)
+        
+        IF answer is "YES"
+            possibleCharacters = filterCharacters(possibleCharacters, bestQuestion, true)
+        ELSE IF answer is "NO"
+            possibleCharacters = filterCharacters(possibleCharacters, bestQuestion, false)
+        END IF
+    END WHILE
+    
+    IF possibleCharacters.length == 1
+        DISPLAY "Is your character " + possibleCharacters[0].name + "?"
+        finalAnswer = getUserInput()
+        IF finalAnswer is "YES"
+            DISPLAY "I won!"
+        ELSE
+            DISPLAY "You got me! Who was your character?"
+        END IF
+    END IF
+END PROCEDURE
+
+// Helper procedures
+PROCEDURE findBestQuestion(characters, questions)
+    bestQuestion = null
+    bestScore = 0
+    
+    FOR EACH question IN questions
+        score = calculateQuestionEffectiveness(question, characters)
+        IF score > bestScore
+            bestScore = score
+            bestQuestion = question
+        END IF
+    END FOR
+    
+    RETURN bestQuestion
+END PROCEDURE
+
+PROCEDURE filterCharacters(characters, question, answer)
+    filteredList = []
+    FOR EACH character IN characters
+        IF character[question] == answer
+            ADD character TO filteredList
+        END IF
+    END FOR
+    RETURN filteredList
+END PROCEDURE
+
+10. Flowchart
+------------
+[A detailed flowchart showing the following key steps:]
+
+1. Program Initialization
+   - Load character database
+   - Initialize question bank
+   - Set up user interface
+
+2. Game Flow
+   - Welcome screen
+   - Character selection (hidden from system)
+   - Question processing loop
+   - Answer evaluation
+   - Character filtering
+   - Final guess
+
+3. Result Handling
+   - Success celebration
+   - Failure handling
+   - Play again option
+
+[Detailed flowchart follows as before...]
+
+11. Project Delivery Requirements
+-------------------------------
+1. Project Structure:
+   - All files in a single project folder
+   - index.html as main entry point
+   - manuale_utente.pdf (this manual)
+   - Organized subfolders:
+     * /css for stylesheets
+     * /img for images
+     * /js for JavaScript files
+
+2. Submission Format:
+   - Create zip file containing all project files
+   - Naming convention: nome_progetto.zip
+   - Upload to e-learning platform
+   - Ensure all dependencies are included
+
+End of Manual
